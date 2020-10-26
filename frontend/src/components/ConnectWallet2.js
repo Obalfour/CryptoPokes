@@ -55,7 +55,7 @@ export function ConnectWallet({ connectWallet, networkError, dismiss }) {
                 <h5><strong>#1 Bulbasaur</strong></h5>
               </div>
               <div className="card border-light bg-light">
-                <img style={{height: '150px'}} src="https://cdn1.iconfinder.com/data/icons/151-1/500/p-02-512.png" className="card-img-top" alt="..."/>
+                <img style={{height: '150px'}} src="https://raw.githubusercontent.com/Obalfour/CryptoPokes/main/resources/pokes/2.svg" className="card-img-top" alt="..."/>
               </div>
               <div className="card-footer pb-0 pr-2 pl-2" style={{height: '155px'}}>
                 <div style={{height: '108px'}}>
@@ -63,7 +63,7 @@ export function ConnectWallet({ connectWallet, networkError, dismiss }) {
                     <h5>Vine Whip</h5>
                   </div>
                   <div className="d-flex flex-row">
-                    <p className="card-text"><small>The target is struck with slender, whiplike vines to inflict damage.</small></p>
+                    <p className="card-text"><small>The user attacks by engulfing the target in an intense fire. This leaves the target with a burn.</small></p>
                   </div>
                 </div>
                 <div className="d-flex flex-row-reverse align-self-end">

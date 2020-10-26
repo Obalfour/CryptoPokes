@@ -2,7 +2,12 @@ import React from "react";
 
 import { NetworkErrorMessage } from "./NetworkErrorMessage";
 import pikachu from '../img/pokesite.png';
-import logo from '../img/pokeballsite.png';
+import tutorial1 from '../img/tutorial1.svg';
+import tutorial2 from '../img/tutorial2.svg';
+import tutorial3 from '../img/tutorial3.svg';
+import { Navbar } from "./NavbarUI";
+import { HomeCard } from "./HomeCard";
+import './card-style.css';
 
 export function ConnectWallet({ connectWallet, networkError, dismiss }) {
   return (
@@ -30,14 +35,7 @@ export function ConnectWallet({ connectWallet, networkError, dismiss }) {
       </div>
     </div> */
     <div className="container">
-      <nav className="navbar navbar-light bg-light mb-5">
-        <a className="navbar-brand" href="#">
-        <strong>
-        <img src={logo} width="30" height="30" className="d-inline-block align-top mr-1" alt="" />
-        CryptoPokes
-        </strong>
-        </a>
-      </nav>
+      <Navbar/>
       <div className="row justify-content-md-center">
         <div className="col-md-8 my-auto text-center">
           <h1 className="bd-title"><strong>Become a Pokémon Master</strong></h1>
@@ -50,6 +48,37 @@ export function ConnectWallet({ connectWallet, networkError, dismiss }) {
           <img src={pikachu} className="img-fluid" />
         </div>
       </div>
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div className="text-center mt-4 mb-2">
+        <h2 className="text-danger mt-4 mb-2">Gotta catch ’em all</h2>
+        <p> Have fun collecting and playing with your friends. </p>
+      </div>
+
+      <div className="row justify-content-md-center mt-4 pt-4">
+        <div className="col-md-4 text-center">
+          <HomeCard imgsrc={tutorial1} cardTitle={"Connect your wallet"} fadeDuration={500}/>
+        </div>
+        <div className="col-md-4 text-center">
+          <HomeCard imgsrc={tutorial2} cardTitle={"Get your cards"} fadeDuration={1500}/>
+        </div>
+        <div className="col-md-4 text-center">
+          <HomeCard imgsrc={tutorial3} cardTitle={"Challenge your friends"} fadeDuration={2500}/>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
     </div>
   );
 }

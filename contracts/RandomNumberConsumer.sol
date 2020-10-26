@@ -1,14 +1,20 @@
 pragma solidity 0.6.6;
 
 import "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol";
+import "./PokeToken.sol";
 
 contract RandomNumberConsumer is VRFConsumerBase {
 
+    PokeToken requestContract;
+
     bytes32 internal keyHash;
     uint256 internal fee;
-    
-    uint256 public randomResult;
-    
+
+    mapping (uint => uint) public randomNumber;
+    mapping (bytes32 => uint) public requestIds;
+
+    uint256 public most_recent_random;
+        
     /**
      * Constructor inherits VRFConsumerBase
      * 
@@ -30,15 +36,24 @@ contract RandomNumberConsumer is VRFConsumerBase {
     /** 
      * Requests randomness from a user-provided seed
      */
-    function getRandomNumber(uint256 userProvidedSeed) public returns (bytes32 requestId) {
-        require(LINK.balanceOf(address(this)) >= fee, "Not enough LINK - fill contract with faucet");
-        return requestRandomness(keyHash, fee, userProvidedSeed);
+    function getRandom(uint256 userProvidedSeed, uint256 tokenId, PokeToken addr) public {
+        require(LINK.balanceOf(address(this)) > fee, "Not enough LINK - fill contract with faucet");
+        bytes32 _requestId = requestRandomness(keyHash, fee, userProvidedSeed);
+        _setRequestContract(addr);
+        requestIds[_requestId] = tokenId;
+    }
+
+    function _setRequestContract(PokeToken addr) {
+        requestContract = addr;
     }
 
     /**
      * Callback function used by VRF Coordinator
      */
-    function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
-        randomResult = randomness;
+    function fulfillRandomness(bytes32 requestId, uint256 randomness) external override {
+        most_recent_random = randomness;
+        uint tokenId = requestIds[requestId];
+        randomNumber[tokenId] = randomness;
+        requestContract.fulfill_random(randomness);
     }
 }

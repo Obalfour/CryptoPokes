@@ -50,14 +50,14 @@ contract PokeToken is ERC721, Ownable, VRFConsumerBase {
         randomNumber[_randomIds.current()] = randomness;
     }
 
-    function setBaseURI(string memory baseURI) public onlyOwner {
+    function setBaseURI(string calldata baseURI) external onlyOwner {
         _setBaseURI(baseURI);
     }
 
     function awardItem(address player, uint256 userProvidedSeed) public returns (uint256) {
     	require(availableCards.length != 0);
     	_randomIds.increment();
-    	getRandomNumber(userProvidedSeed)
+    	getRandomNumber(userProvidedSeed);
 
         require(randomNumber[_randomIds.current()] > 0, "random-not-found");
         uint256 currentRandom = randomNumber[_randomIds.current()] % availableCards.length;
@@ -68,20 +68,11 @@ contract PokeToken is ERC721, Ownable, VRFConsumerBase {
         availableCards.pop();
 
         _mint(player, newTokenId);
-        _setTokenURI(newTokenId, Strings.fromUint256(newTokenId));
+        _setTokenURI(newTokenId, fromUint256(newTokenId));
 
         ownedCards[newTokenId] = player;
 
         return newTokenId;
-    }
-
-    function tokenURI(uint256 tokenId) external view returns (string memory) {
-        require(_exists(tokenId), "PokeTokens: URI query for nonexistent token");
-        return string(abi.encodePacked(baseTokenURI(), Strings.fromUint256(tokenId)));
-    }
-
-    function baseTokenURI() public view returns (string memory) {
-        return _baseTokenURI;
     }
 
     function getOwner(uint256 tokenId) view public returns (address) {
@@ -98,6 +89,26 @@ contract PokeToken is ERC721, Ownable, VRFConsumerBase {
 
     function getAvailableCards() view public returns (uint256[] memory) {
         return availableCards;
+    }
+
+    function fromUint256(uint256 value) internal pure returns (string memory) {
+        if (value == 0) {
+            return "0";
+        }
+        uint256 temp = value;
+        uint256 digits;
+        while (temp != 0) {
+            digits++;
+            temp /= 10;
+        }
+        bytes memory buffer = new bytes(digits);
+        uint256 index = digits - 1;
+        temp = value;
+        while (temp != 0) {
+            buffer[index--] = byte(uint8(48 + temp % 10));
+            temp /= 10;
+        }
+        return string(buffer);
     }
 
 }

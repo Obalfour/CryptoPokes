@@ -1,6 +1,7 @@
 import React from "react";
 import pikachu from '../img/pokesite.png';
-import logo from '../img/pokeballsite.png';
+
+import { Navbar } from "./NavbarUI";
 
 export function NoWalletDetected() {
   return (
@@ -25,14 +26,7 @@ export function NoWalletDetected() {
     </div>
     */
     <div className="container">
-      <nav className="navbar navbar-light bg-light mb-5">
-        <a className="navbar-brand" href="#">
-        <strong>
-        <img src={logo} width="30" height="30" className="d-inline-block align-top mr-1" alt="" />
-        CryptoPokes
-        </strong>
-        </a>
-      </nav>
+      <Navbar/>
       <div className="row justify-content-md-center">
         <div className="col-md-8 my-auto text-center">
           <h1 className="bd-title"><strong>Become a Pokémon Master</strong></h1>
