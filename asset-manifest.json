@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/CryptoPokes/frontend/static/css/main.0621d3cc.chunk.css",
+    "main.js": "/CryptoPokes/frontend/static/js/main.9a608c1b.chunk.js",
+    "main.js.map": "/CryptoPokes/frontend/static/js/main.9a608c1b.chunk.js.map",
+    "runtime-main.js": "/CryptoPokes/frontend/static/js/runtime-main.56156bac.js",
+    "runtime-main.js.map": "/CryptoPokes/frontend/static/js/runtime-main.56156bac.js.map",
+    "static/css/2.d713517f.chunk.css": "/CryptoPokes/frontend/static/css/2.d713517f.chunk.css",
+    "static/js/2.e2958e3e.chunk.js": "/CryptoPokes/frontend/static/js/2.e2958e3e.chunk.js",
+    "static/js/2.e2958e3e.chunk.js.map": "/CryptoPokes/frontend/static/js/2.e2958e3e.chunk.js.map",
+    "index.html": "/CryptoPokes/frontend/index.html",
+    "precache-manifest.d950cb0049e8475efaaf02c6f1029b5d.js": "/CryptoPokes/frontend/precache-manifest.d950cb0049e8475efaaf02c6f1029b5d.js",
+    "service-worker.js": "/CryptoPokes/frontend/service-worker.js",
+    "static/css/2.d713517f.chunk.css.map": "/CryptoPokes/frontend/static/css/2.d713517f.chunk.css.map",
+    "static/css/main.0621d3cc.chunk.css.map": "/CryptoPokes/frontend/static/css/main.0621d3cc.chunk.css.map",
+    "static/js/2.e2958e3e.chunk.js.LICENSE.txt": "/CryptoPokes/frontend/static/js/2.e2958e3e.chunk.js.LICENSE.txt",
+    "static/media/pokesite.png": "/CryptoPokes/frontend/static/media/pokesite.a7cb0fd0.png",
+    "static/media/tutorial1.svg": "/CryptoPokes/frontend/static/media/tutorial1.749884e0.svg",
+    "static/media/tutorial2.svg": "/CryptoPokes/frontend/static/media/tutorial2.c7ec3a7c.svg",
+    "static/media/tutorial3.svg": "/CryptoPokes/frontend/static/media/tutorial3.49b76061.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.56156bac.js",
+    "static/css/2.d713517f.chunk.css",
+    "static/js/2.e2958e3e.chunk.js",
+    "static/css/main.0621d3cc.chunk.css",
+    "static/js/main.9a608c1b.chunk.js"
+  ]
+}
