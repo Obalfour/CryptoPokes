@@ -21,13 +21,13 @@ async function main() {
     }
   
     fs.writeFileSync(
-        contractsDir + "/registry-address.json",
+        contractsDir + "/token-address.json",
         JSON.stringify({ address: token.address }, undefined, 2)
     );
   
     fs.copyFileSync(
-        __dirname + "/../artifacts/ITBAStudentRegistry.json",
-        contractsDir + "/ITBAStudentRegistry.json"
+        __dirname + "/../artifacts/PokeToken.json",
+        contractsDir + "/PokeToken.json"
     );
   }
   

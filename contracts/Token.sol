@@ -1,6 +1,6 @@
 // Solidity files have to start with this pragma.
 // It will be used by the Solidity compiler to validate its version.
-pragma solidity ^0.5.15;
+pragma solidity ^0.6.8;
 
 // We import this library to be able to use console.log
 import "@nomiclabs/buidler/console.sol";

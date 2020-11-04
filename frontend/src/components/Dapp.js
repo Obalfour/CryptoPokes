@@ -5,8 +5,8 @@ import { ethers } from "ethers";
 
 // We import the contract's artifacts and address here, as we are going to be
 // using them with ethers
-import TokenArtifact from "../contracts/Token.json";
-import contractAddress from "../contracts/contract-address.json";
+import TokenArtifact from "../contracts/PokeToken.json";
+import contractAddress from "../contracts/token-address.json";
 
 // All the logic of this dapp is contained in the Dapp component.
 // These other components are just presentational ones: they don't have any
@@ -18,11 +18,17 @@ import { Transfer } from "./Transfer";
 import { TransactionErrorMessage } from "./TransactionErrorMessage";
 import { WaitingForTransactionMessage } from "./WaitingForTransactionMessage";
 import { NoTokensMessage } from "./NoTokensMessage";
+import { MintToken } from "./MintToken";
+
+import ReactCardFlip from 'react-card-flip';
+import { Navbar } from "./NavbarUI";
+import backcard from '../img/backcard.png';
 
 // This is the Buidler EVM network id, you might change it in the buidler.config.js
 // Here's a list of network ids https://docs.metamask.io/guide/ethereum-provider.html#properties
 // to use when deploying to other networks.
-const BUIDLER_EVM_NETWORK_ID = '31337';
+//const BUIDLER_EVM_NETWORK_ID = '31337';
+const BUIDLER_EVM_NETWORK_ID = '42';
 
 // This is an error code that indicates that the user canceled a transaction
 const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
@@ -53,6 +59,12 @@ export class Dapp extends React.Component {
       txBeingSent: undefined,
       transactionError: undefined,
       networkError: undefined,
+      pokeToken: undefined,
+      isFlipped: false,
+      pokeData: undefined,
+      moveData: undefined,
+      myCards: [],
+      currentCard: undefined
     };
 
     this.state = this.initialState;
@@ -88,8 +100,70 @@ export class Dapp extends React.Component {
       return <Loading />;
     }
 
-    // If everything is loaded, we render the application.
     return (
+      <div className="container">
+        <Navbar/>
+        <div className="row justify-content-md-center d-flex align-items-center">
+          <div className="col-md-6 text-center d-inline-flex flex-column align-items-center">
+            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
+                
+                <div className="bg-light pb-2 pt-2 pr-2 pl-2 d-flex rounded card" style={{height: '375px', width: '250px'}}>
+                  <img style={{height: '230px'}} className="card-img-top" src={backcard} alt="Card image cap"/>
+                </div>
+
+                <div className="bg-warning pb-2 pt-2 pr-2 pl-2 d-flex rounded card" style={{height: '375px', width: '250px'}}>
+                  <div className="card text-white bg-primary d-flex pr-2 pl-2">
+                    <div style={{padding: '0px'}} className="card-header mt-2">
+                      <h5><strong>#{this.state.pokeToken} {this.state.pokeData && this.state.pokeData.name}</strong></h5>
+                    </div>
+                    <div className="card border-light bg-light">
+                      <img style={{height: '150px'}} src={this.state.pokeData && this.state.pokeData.image} className="card-img-top" alt="..."/>
+                    </div>
+                    <div className="card-footer pb-0 pr-2 pl-2" style={{height: '155px'}}>
+                      <div style={{height: '108px'}}>
+                        <div className="d-flex flex-row">
+                          <h5>{this.state.moveData && this.state.moveData.name}</h5>
+                        </div>
+                        <div className="d-flex flex-row">
+                          <p className="card-text"><small>{this.state.moveData && this.state.moveData.description}</small></p>
+                        </div>
+                      </div>
+                      <div className="d-flex flex-row-reverse align-self-end">
+                        <h5>{this.state.moveData && this.state.moveData.damage} pts</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+
+            </ReactCardFlip>
+          </div>
+          <div className="col-md-6 text-center d-inline-flex flex-column align-items-center">
+            
+            <div className="jumbotron  pt-3 pb-5 mb-0">
+              <img className="mb-1" src="https://i.pinimg.com/originals/ad/e4/ae/ade4aee3ca5c50f9b02ab18a58596a24.png" />
+              {this.state.balance.eq(0) && (
+                <button type="button" className="btn btn-danger btn-lg mt-3" onClick={() => this._awardToken()}>Get you first trading card</button>
+              )}
+              {this.state.balance.gt(0) && (
+                <div>
+                  <h5>Select your card:</h5>
+                  <select className="form-control" onChange={(event) => this._getCardData(this.state.myCards.findIndex(card => card.toString() === event.target.value.toString()))}
+                    value={this.state.currentCard}>
+                    {this.state.myCards.map(card => (
+                      <option value={card}>{"Collector Card #" + card.toString()}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+            </div> 
+
+          </div>
+        </div>
+      </div>
+    );
+
+    // If everything is loaded, we render the application.
+    /*return (
       <div className="container p-4">
         <div className="row">
           <div className="col-12">
@@ -114,7 +188,7 @@ export class Dapp extends React.Component {
               Sending a transaction isn't an immidiate action. You have to wait
               for it to be mined.
               If we are waiting for one, we show a message here.
-            */}
+            *//*}
             {this.state.txBeingSent && (
               <WaitingForTransactionMessage txHash={this.state.txBeingSent} />
             )}
@@ -122,7 +196,7 @@ export class Dapp extends React.Component {
             {/* 
               Sending a transaction can fail in multiple ways. 
               If that happened, we show a message here.
-            */}
+            *//*}
             {this.state.transactionError && (
               <TransactionErrorMessage
                 message={this._getRpcErrorMessage(this.state.transactionError)}
@@ -136,7 +210,7 @@ export class Dapp extends React.Component {
           <div className="col-12">
             {/*
               If the user has no tokens, we don't show the Tranfer form
-            */}
+            *//*}
             {this.state.balance.eq(0) && (
               <NoTokensMessage selectedAddress={this.state.selectedAddress} />
             )}
@@ -146,7 +220,7 @@ export class Dapp extends React.Component {
               transaction and transfer some tokens.
               The component doesn't have logic, it just calls the transferTokens
               callback.
-            */}
+            *//*}
             {this.state.balance.gt(0) && (
               <Transfer
                 transferTokens={(to, amount) =>
@@ -158,7 +232,7 @@ export class Dapp extends React.Component {
           </div>
         </div>
       </div>
-    );
+    );*/
   }
 
   componentWillUnmount() {
@@ -230,7 +304,7 @@ export class Dapp extends React.Component {
     // When, we initialize the contract using that provider and the token's
     // artifact. You can do this same thing with your contracts.
     this._token = new ethers.Contract(
-      contractAddress.Token,
+      contractAddress.address,
       TokenArtifact.abi,
       this._provider.getSigner(0)
     );
@@ -264,9 +338,33 @@ export class Dapp extends React.Component {
     this.setState({ tokenData: { name, symbol } });
   }
 
+  async _getCardData(index) {
+    if(this.state.balance > 0) {
+      this.setState({ isFlipped: false });
+      const cors_prefix = "https://cors-anywhere.herokuapp.com/";
+      const pokeToken = await this._token.tokenOfOwnerByIndex(this.state.selectedAddress, index);
+      this.setState({ pokeToken: pokeToken.toString() });
+      const pokeURL = await this._token.tokenURI(pokeToken);
+      const pokeGetData = await fetch(cors_prefix + pokeURL);
+      const pokeData = await pokeGetData.json();
+      this.setState({ pokeData });
+      const moveURL = "https://cryptopokes.herokuapp.com/api/move/" + pokeToken;
+      const move = await fetch(cors_prefix + moveURL);
+      const moveData = await move.json();
+      this.setState({ moveData });
+      this.setState({ isFlipped: true });
+    }
+  }
+
   async _updateBalance() {
     const balance = await this._token.balanceOf(this.state.selectedAddress);
     this.setState({ balance });
+    const cards = [];
+    for ( var i = 0; i < balance; i++){
+      var card = await this._token.tokenOfOwnerByIndex(this.state.selectedAddress, i);
+      cards.push(card);
+    }
+    this.setState({ myCards: cards });
   }
 
   // This method sends an ethereum transaction to transfer tokens.
@@ -361,9 +459,28 @@ export class Dapp extends React.Component {
     }
 
     this.setState({ 
-      networkError: 'Please connect Metamask to Localhost:8545'
+      networkError: 'Please connect Metamask to Kovan'
     });
 
     return false;
+  }
+
+  async _awardToken() {
+    this._getCardData(0);
+    /*
+    const cors_prefix = "https://cors-anywhere.herokuapp.com/";
+    this._token.awardItem(this.state.selectedAddress);
+    const pokeToken = await this._token.tokenOfOwnerByIndex(this.state.selectedAddress,0);
+    this.setState({ pokeToken: pokeToken.toString() });
+    const pokeURL = await this._token.tokenURI(pokeToken);
+    const pokeGetData = await fetch(cors_prefix + pokeURL);
+    const pokeData = await pokeGetData.json();
+    this.setState({ pokeData });
+    const moveURL = "https://cryptopokes.herokuapp.com/api/move/" + pokeToken;
+    const move = await fetch(cors_prefix + moveURL);
+    const moveData = await move.json();
+    this.setState({ moveData });
+    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+    */
   }
 }
