@@ -4,6 +4,8 @@ This repository contains a project of a Pokémon Trading Card Game using ERC 721
 
 The dapp was created using a [sample project from buidler](http://buidler.dev/tutorial/hackathon-boilerplate-project.html). The NFTs were created following [this guide](https://docs.opensea.io/docs/getting-started). The random number generator used to mint the special tokens was created using [this Chainlink VRF tutorial](https://docs.chain.link/docs/get-a-random-number).
 
+Wanna see this project live? [Try it out.](https://obalfour.github.io/CryptoPokes/)
+
 ## Quick start
 
 The first things you need to do are cloning this repository and installing its
@@ -79,12 +81,3 @@ Your environment will have everything you need to build a Dapp powered by Buidle
 [Pikachu by Mohammad Ali](https://www.iconfinder.com/icons/1392683/charcter_go_game_pokemon_play_icon)
 
 [Pokemon icons by roundicons.com](https://www.iconfinder.com/iconsets/pokemon-go-vol-1)
-
-## Feedback, help and news
-
-We'd love to have your feedback on this tutorial. Feel free to reach us through
-this repository or [our Telegram Support Group](https://t.me/BuidlerSupport).
-
-Also you can [follow Nomic Labs on Twitter](https://twitter.com/nomiclabs).
-
-**Happy _buidling_!**
