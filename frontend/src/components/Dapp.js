@@ -364,6 +364,9 @@ export class Dapp extends React.Component {
       var card = await this._token.tokenOfOwnerByIndex(this.state.selectedAddress, i);
       cards.push(card);
     }
+    if(cards.length > 0 && !this.state.pokeData) {
+      this._getCardData(0);
+    }
     this.setState({ myCards: cards });
   }
 
