@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/CryptoPokes/static/css/main.0621d3cc.chunk.css",
-    "main.js": "/CryptoPokes/static/js/main.9a608c1b.chunk.js",
-    "main.js.map": "/CryptoPokes/static/js/main.9a608c1b.chunk.js.map",
+    "main.js": "/CryptoPokes/static/js/main.a5641cef.chunk.js",
+    "main.js.map": "/CryptoPokes/static/js/main.a5641cef.chunk.js.map",
     "runtime-main.js": "/CryptoPokes/static/js/runtime-main.8d4950cc.js",
     "runtime-main.js.map": "/CryptoPokes/static/js/runtime-main.8d4950cc.js.map",
     "static/css/2.d713517f.chunk.css": "/CryptoPokes/static/css/2.d713517f.chunk.css",
     "static/js/2.e2958e3e.chunk.js": "/CryptoPokes/static/js/2.e2958e3e.chunk.js",
     "static/js/2.e2958e3e.chunk.js.map": "/CryptoPokes/static/js/2.e2958e3e.chunk.js.map",
     "index.html": "/CryptoPokes/index.html",
-    "precache-manifest.273131ded2038a9d85f8dbec4a75f56f.js": "/CryptoPokes/precache-manifest.273131ded2038a9d85f8dbec4a75f56f.js",
+    "precache-manifest.5ac4dd31d4b88e21f2521db1f9dcbbf2.js": "/CryptoPokes/precache-manifest.5ac4dd31d4b88e21f2521db1f9dcbbf2.js",
     "service-worker.js": "/CryptoPokes/service-worker.js",
     "static/css/2.d713517f.chunk.css.map": "/CryptoPokes/static/css/2.d713517f.chunk.css.map",
     "static/css/main.0621d3cc.chunk.css.map": "/CryptoPokes/static/css/main.0621d3cc.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.d713517f.chunk.css",
     "static/js/2.e2958e3e.chunk.js",
     "static/css/main.0621d3cc.chunk.css",
-    "static/js/main.9a608c1b.chunk.js"
+    "static/js/main.a5641cef.chunk.js"
   ]
 }

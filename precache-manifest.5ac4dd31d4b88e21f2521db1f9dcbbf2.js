@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bf59632498c310b49134050eae205ab1",
+    "revision": "95c81c8f347b28a23874d975723bd331",
     "url": "/CryptoPokes/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CryptoPokes/static/css/2.d713517f.chunk.css"
   },
   {
-    "revision": "213feaed5ffc9c4247c4",
+    "revision": "2fbc134aa9692293779a",
     "url": "/CryptoPokes/static/css/main.0621d3cc.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CryptoPokes/static/js/2.e2958e3e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "213feaed5ffc9c4247c4",
-    "url": "/CryptoPokes/static/js/main.9a608c1b.chunk.js"
+    "revision": "2fbc134aa9692293779a",
+    "url": "/CryptoPokes/static/js/main.a5641cef.chunk.js"
   },
   {
     "revision": "19aa809109a51c3253f9",
