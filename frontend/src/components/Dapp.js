@@ -466,7 +466,7 @@ export class Dapp extends React.Component {
   }
 
   async _awardToken() {
-    this._getCardData(0);
+    this._token.awardItem(this.state.selectedAddress);
     /*
     const cors_prefix = "https://cors-anywhere.herokuapp.com/";
     this._token.awardItem(this.state.selectedAddress);
