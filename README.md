@@ -1,13 +1,8 @@
-# Buidler Hackathon Boilerplate
+# CryptoPokes
 
-This repository contains a sample project that you can use as the starting point
-for your Ethereum project. It's also a great fit for learning the basics of
-smart contract development.
+This repository contains a project of a Pokémon Trading Card Game using ERC 721 Non-Fungible Tokens. A special token is rewarded to a lucky user using on-chain verifiable random functions.
 
-This project is intended to be used with the
-[Buidler Beginners Tutorial](http://buidler.dev/tutorial), but you should be
-able to follow it by yourself by reading the README and exploring its
-`contracts`, `tests`, `scripts` and `frontend` directories.
+The dapp was created using a [sample project from buidler](http://buidler.dev/tutorial/hackathon-boilerplate-project.html). The NFTs were created following [this guide](https://docs.opensea.io/docs/getting-started). The random number generator used to mint the special tokens was created using [this Chainlink VRF tutorial](https://docs.chain.link/docs/get-a-random-number).
 
 ## Quick start
 
@@ -62,6 +57,8 @@ For a complete introduction to Buidler, refer to [this guide](https://buidler.de
 Your environment will have everything you need to build a Dapp powered by Buidler and React.
 
 - [Buidler](https://buidler.dev/): An Ethereum development task runner and testing network.
+- [Chainlink](https://docs.chain.link/docs): A descentralized oracle network.
+- [OpenZeppelin](https://docs.openzeppelin.com/openzeppelin/): A library of secure smart contracts.
 - [Mocha](https://mochajs.org/): A JavaScript test runner.
 - [Chai](https://www.chaijs.com/): A JavaScript assertion library.
 - [ethers.js](https://docs.ethers.io/ethers.js/html/): A JavaScript library for interacting with Ethereum.
@@ -74,6 +71,14 @@ Your environment will have everything you need to build a Dapp powered by Buidle
   console, try resetting your Metamask account. This will reset the account's
   transaction history and also the nonce. Open Metamask, click on your account
   followed by `Settings > Advanced > Reset Account`.
+
+## Special credits
+
+[151 pokemon of Kanto icon set by Geovanny Gavilanes](https://www.iconfinder.com/iconsets/151-1)
+
+[Pikachu by Mohammad Ali](https://www.iconfinder.com/icons/1392683/charcter_go_game_pokemon_play_icon)
+
+[Pokemon icons by roundicons.com](https://www.iconfinder.com/iconsets/pokemon-go-vol-1)
 
 ## Feedback, help and news
 
