@@ -107,11 +107,11 @@ export class Dapp extends React.Component {
           <div className="col-md-6 text-center d-inline-flex flex-column align-items-center">
             <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
                 
-                <div className="bg-light pb-2 pt-2 pr-2 pl-2 d-flex rounded card" style={{height: '375px', width: '250px'}}>
+                <div className="bg-light pb-2 pt-2 pr-2 pl-2 d-flex rounded card card-with-shadow" style={{height: '375px', width: '250px'}}>
                   <img style={{height: '230px'}} className="card-img-top" src={backcard} alt="Card image cap"/>
                 </div>
 
-                <div className="bg-warning pb-2 pt-2 pr-2 pl-2 d-flex rounded card" style={{height: '375px', width: '250px'}}>
+                <div className="bg-warning pb-2 pt-2 pr-2 pl-2 d-flex rounded card card-with-shadow" style={{height: '375px', width: '250px'}}>
                   <div className="card text-white bg-primary d-flex pr-2 pl-2">
                     <div style={{padding: '0px'}} className="card-header mt-2">
                       <h5><strong>#{this.state.pokeToken} {this.state.pokeData && this.state.pokeData.name}</strong></h5>
