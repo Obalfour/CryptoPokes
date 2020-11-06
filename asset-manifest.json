@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/CryptoPokes/static/css/main.0621d3cc.chunk.css",
-    "main.js": "/CryptoPokes/static/js/main.969bc939.chunk.js",
-    "main.js.map": "/CryptoPokes/static/js/main.969bc939.chunk.js.map",
+    "main.css": "/CryptoPokes/static/css/main.b6f5921b.chunk.css",
+    "main.js": "/CryptoPokes/static/js/main.98a3cd08.chunk.js",
+    "main.js.map": "/CryptoPokes/static/js/main.98a3cd08.chunk.js.map",
     "runtime-main.js": "/CryptoPokes/static/js/runtime-main.8d4950cc.js",
     "runtime-main.js.map": "/CryptoPokes/static/js/runtime-main.8d4950cc.js.map",
     "static/css/2.d713517f.chunk.css": "/CryptoPokes/static/css/2.d713517f.chunk.css",
     "static/js/2.e2958e3e.chunk.js": "/CryptoPokes/static/js/2.e2958e3e.chunk.js",
     "static/js/2.e2958e3e.chunk.js.map": "/CryptoPokes/static/js/2.e2958e3e.chunk.js.map",
     "index.html": "/CryptoPokes/index.html",
-    "precache-manifest.42980e7c20d173024ad0df88cea62780.js": "/CryptoPokes/precache-manifest.42980e7c20d173024ad0df88cea62780.js",
+    "precache-manifest.e62a5fb8c6cee754da9f121c40ae3021.js": "/CryptoPokes/precache-manifest.e62a5fb8c6cee754da9f121c40ae3021.js",
     "service-worker.js": "/CryptoPokes/service-worker.js",
     "static/css/2.d713517f.chunk.css.map": "/CryptoPokes/static/css/2.d713517f.chunk.css.map",
-    "static/css/main.0621d3cc.chunk.css.map": "/CryptoPokes/static/css/main.0621d3cc.chunk.css.map",
+    "static/css/main.b6f5921b.chunk.css.map": "/CryptoPokes/static/css/main.b6f5921b.chunk.css.map",
     "static/js/2.e2958e3e.chunk.js.LICENSE.txt": "/CryptoPokes/static/js/2.e2958e3e.chunk.js.LICENSE.txt",
     "static/media/pokesite.png": "/CryptoPokes/static/media/pokesite.a7cb0fd0.png",
     "static/media/tutorial1.svg": "/CryptoPokes/static/media/tutorial1.749884e0.svg",
@@ -23,7 +23,7 @@
     "static/js/runtime-main.8d4950cc.js",
     "static/css/2.d713517f.chunk.css",
     "static/js/2.e2958e3e.chunk.js",
-    "static/css/main.0621d3cc.chunk.css",
-    "static/js/main.969bc939.chunk.js"
+    "static/css/main.b6f5921b.chunk.css",
+    "static/js/main.98a3cd08.chunk.js"
   ]
 }
