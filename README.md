@@ -27,7 +27,7 @@ Then, on a new terminal, go to the repository's root folder and run this to
 deploy your contract:
 
 ```sh
-npx buidler run scripts/deploy.js --network localhost
+npx buidler run scripts/deploy_PokeToken.js --network kovan
 ```
 
 Finally, we can run the frontend with:
@@ -40,7 +40,7 @@ npm start
 
 Open [http://localhost:3000/](http://localhost:3000/) to see your Dapp. You will
 need to have [Metamask](http://metamask.io) installed and listening to
-`localhost 8545`.
+`the Kovan network`.
 
 ## User Guide
 
@@ -59,13 +59,23 @@ For a complete introduction to Buidler, refer to [this guide](https://buidler.de
 Your environment will have everything you need to build a Dapp powered by Buidler and React.
 
 - [Buidler](https://buidler.dev/): An Ethereum development task runner and testing network.
-- [Chainlink](https://docs.chain.link/docs): A descentralized oracle network.
+- [Chainlink](https://docs.chain.link/docs): A library to interact with a descentralized oracle network.
 - [OpenZeppelin](https://docs.openzeppelin.com/openzeppelin/): A library of secure smart contracts.
 - [Mocha](https://mochajs.org/): A JavaScript test runner.
 - [Chai](https://www.chaijs.com/): A JavaScript assertion library.
 - [ethers.js](https://docs.ethers.io/ethers.js/html/): A JavaScript library for interacting with Ethereum.
 - [Waffle](https://github.com/EthWorks/Waffle/): To have Ethereum-specific Chai assertions/mathers.
 - [A sample frontend/Dapp](./frontend): A Dapp which uses [Create React App](https://github.com/facebook/create-react-app).
+
+## Contracts
+
+- PokeToken: An ERC721 contract for Pokémon collectible cards. [Try it on Remix](https://remix.ethereum.org/#version=soljson-v0.6.6+commit.6c089d02.js&optimize=false&evmVersion=null&gist=f0ac8347c105085d90a93b6bc5910313).
+
+- RandomNumberConsumer: A contract that uses Chainlink VRF for minting a special collectible card. [Try it on Remix](https://remix.ethereum.org/#version=soljson-v0.6.6+commit.6c089d02.js&optimize=false&evmVersion=null&gist=69a3dc9d7a703a91575b79af90af3428).
+
+## Resources
+
+Additional information about Chainlink and the database for the metadata API is available in the docs section. There is also an [article on Medium](https://oliver-balfour.medium.com/chainlink-the-decentralized-oracle-70f3bc95007b).
 
 ## Troubleshooting
 
