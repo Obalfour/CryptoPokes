@@ -12,19 +12,15 @@ The first things you need to do are cloning this repository and installing its
 dependencies:
 
 ```sh
-git clone https://github.com/nomiclabs/buidler-hackathon-boilerplate.git
-cd buidler-hackathon-boilerplate
+git clone https://github.com/Obalfour/CryptoPokes.git
+cd CryptoPokes
 npm install
 ```
 
-Once installed, let's run Buidler's testing network:
-
-```sh
-npx buidler node
-```
+Before deploying your contract you have to set the credentials in your .env file
 
 Then, on a new terminal, go to the repository's root folder and run this to
-deploy your contract:
+deploy PokeToken contract:
 
 ```sh
 npx buidler run scripts/deploy_PokeToken.js --network kovan
@@ -41,18 +37,6 @@ npm start
 Open [http://localhost:3000/](http://localhost:3000/) to see your Dapp. You will
 need to have [Metamask](http://metamask.io) installed and listening to
 `the Kovan network`.
-
-## User Guide
-
-You can find detailed instructions on using this repository and many tips in [its documentation](http://buidler.dev/tutorial).
-
-- [Project description (Token.sol)](http://buidler.dev/tutorial/4-contracts/)
-- [Setting up the environment](http://buidler.dev/tutorial/1-setup/)
-- [Testing with Buidler, Mocha and Waffle](http://buidler.dev/tutorial/5-test/)
-- [Setting up Metamask](http://buidler.dev/tutorial/8-frontend/#setting-up-metamask)
-- [Buidler's full documentation](https://buidler.dev/getting-started/)
-
-For a complete introduction to Buidler, refer to [this guide](https://buidler.dev/getting-started/#overview).
 
 ## What’s Included?
 
