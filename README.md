@@ -78,6 +78,6 @@ Additional information about Chainlink and the database for the metadata API is 
 
 ## Thank you
 
-We want to thank the entire [Chainlink community](https://chain.link/community) for your support.
+We want to thank the entire [Chainlink community](https://chain.link/community) for the support.
 
 ![Thanks](https://i.imgur.com/tblDQ51.png)
