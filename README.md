@@ -75,3 +75,9 @@ Additional information about Chainlink and the database for the metadata API is 
 [Pikachu by Mohammad Ali](https://www.iconfinder.com/icons/1392683/charcter_go_game_pokemon_play_icon)
 
 [Pokemon icons by roundicons.com](https://www.iconfinder.com/iconsets/pokemon-go-vol-1)
+
+## Thank you
+
+We thank the entire [Chainlink community](https://chain.link/community) for their support.
+
+![Thanks](https://i.imgur.com/tblDQ51.png)
