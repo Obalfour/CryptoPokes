@@ -8,9 +8,11 @@ This directory has the resources for the project.
 
 ## Database
 
-You can use [My JSON Server](https://my-json-server.typicode.com/) to create a Fake Online REST server using the sample_db.json in case you don't want to deploy a full Metadata API server.
+When you are creating the ERC721 contract for your PokeToken you will need a database in order to save the metadata of your NFTs. Here we present to you 2 simple solutions:
 
-The Metadata API for this project was created using [this repository](https://github.com/ProjectOpenSea/metadata-api-nodejs). The database files for moves and tokens are available in the dbs section.
+1- By default, you will use [this Metadata API](https://cryptopokes.herokuapp.com/) that was created using [this repository](https://github.com/ProjectOpenSea/metadata-api-nodejs), but you can create your own Metadata API following [this tutorial](https://github.com/ProjectOpenSea/metadata-api-nodejs#readme). The database files for moves and tokens are available in the [dbs section](https://github.com/Obalfour/CryptoPokes/tree/main/resources/dbs).
+
+2- If you don't want to deploy a full Metadata API server you can use [My JSON Server](https://my-json-server.typicode.com/) to create a Fake Online REST server with [this sample_db.json](https://github.com/Obalfour/CryptoPokes/blob/main/resources/dbs/sample_db.json).
 
 ## Documentation
 
