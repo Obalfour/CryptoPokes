@@ -6,6 +6,8 @@ The dapp was created using a [sample project from buidler](http://buidler.dev/tu
 
 Wanna see this project live? [Try it out.](https://obalfour.github.io/CryptoPokes/)
 
+![Preview of the site](https://github.com/Obalfour/CryptoPokes/blob/main/frontend/public/site-prev.png)
+
 ## Quick start
 
 The first things you need to do are cloning this repository and installing its
@@ -81,3 +83,7 @@ Additional information about Chainlink and the database for the metadata API is 
 We want to thank the entire [Chainlink community](https://chain.link/community) for the support.
 
 ![Thanks](https://i.imgur.com/tblDQ51.png)
+
+## Disclaimer
+I'm not affiliated with Nintendo in any way.
+Pokémon® is a registered trademark by Nintendo. Nintendo® is a registered trademark.
